@@ -10,7 +10,14 @@ from col_spec import ColSpec, Col
 class ExcelView(View, MultipleObjectMixin):
     file_name = "spreadsheet"
     colspec = None
+    
+    def init(self, **kwargs):
+        self.colspec = self.get_colspec()
+        super(ExcelView, self).__init__(**kwargs)
 
+    def get_colspec(self, *args, **kwargs):
+        return self.colspec
+        
     def get(self, *args, **kwargs):
         """
         Returns an ExcelResponse containing the data
