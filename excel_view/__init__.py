@@ -11,7 +11,7 @@ class ExcelView(View, MultipleObjectMixin):
     file_name = "spreadsheet"
     colspec = None
     
-    def init(self, **kwargs):
+    def __init__(self, **kwargs):
         self.colspec = self.get_colspec()
         super(ExcelView, self).__init__(**kwargs)
 
