@@ -38,11 +38,18 @@ class ColSpec(object):
     mapping from these dicts to the spreadsheet rows.
     """
 
-    def __init__(self, *cols):
+    #def __init__(self, *cols):
+    def __init__(self):
         """
         Expects a list of Col() objects as parameters
         """
-        self.cols = cols
+        self.cols = self.get_cols()
+
+    def get_cols(self):
+        """
+        Returns the columns from class
+        """
+        return self.columns
 
     def inputs(self):
         """
